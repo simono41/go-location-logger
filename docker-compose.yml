@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+
+# Go application service
+  go-app:
+    build:
+      context: go/.
+      args:
+        - GO111MODULE=on
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=owntracks
+      - DB_NAME=owntracks
+
+    restart: always
+    networks:
+      default:
+
+  db:    
+    image: mariadb  
+    volumes: 
+      - ./mysql-data:/var/lib/mysql
+    environment:  
+      MYSQL_ROOT_PASSWORD: owntracks
+      MYSQL_DATABASE: owntracks
+    networks:
+      default:
