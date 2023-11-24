@@ -6,7 +6,7 @@ A simple Go program that handles location data sent via HTTP POST requests and i
 
 - Handles JSON payloads containing location data.
 - Inserts location data into a MySQL database.
-- Supports parameters `device` and `user` in HTTP requests.
+- Utilizes headers `X-Limit-U` and `X-Limit-D` for specifying user and device information in HTTP requests.
 
 ## Prerequisites
 
@@ -86,7 +86,11 @@ Make a POST request with a JSON payload to `http://localhost:8080/?device=your_d
 Example:
 
 ```bash
-curl -X POST -d '{"_type": "location", "tst": 1637650367, "lat": 37.7749, "lon": -122.4194, "tid": "123", "batt": 90, "vac": 220}' http://localhost:8080/?device=your_device&user=your_user
+curl -X POST -H "Content-Type: application/json" \
+  -H "X-Limit-U: your_user" \
+  -H "X-Limit-D: your_device" \
+  -d '{"_type": "location", "tst": 1637650367, "lat": 37.7749, "lon": -122.4194, "tid": "123", "batt": 90, "vac": 220}' \
+  http://localhost:8080/
 ```
 
 ## Contributing
@@ -95,4 +99,4 @@ Feel free to open issues or submit pull requests.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
