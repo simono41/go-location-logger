@@ -20,7 +20,7 @@ Before running the program, ensure you have the following:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/go-location-logger.git
+    git clone https://code.brothertec.eu/simono41/go-location-logger.git
     ```
 
 2. Navigate to the project directory:
