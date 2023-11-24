@@ -51,19 +51,15 @@ Before running the program, ensure you have the following:
 
 ### Running with Docker Compose
 
-1. Create a Docker network:
-
-    ```bash
-    docker network create app-network
-    ```
-
-2. Use Docker Compose to start the services:
+1. Use Docker Compose to start the services:
 
     ```bash
     docker-compose up -d
     ```
 
-3. Access your Go application at `http://localhost:8080`. Make HTTP POST requests as described in the README.md.
+2. Access your Go application at `http://localhost:8080`. Make HTTP POST requests as described in the README.md.
+
+3. Import the Grafana Dashboard from `dashboard.json`. Use the Grafana UI to import the dashboard and visualize your data.
 
 4. To stop the services, run:
 
