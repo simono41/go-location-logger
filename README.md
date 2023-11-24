@@ -89,7 +89,27 @@ Example:
 curl -X POST -H "Content-Type: application/json" \
   -H "X-Limit-U: your_user" \
   -H "X-Limit-D: your_device" \
-  -d '{"_type": "location", "tst": 1637650367, "lat": 37.7749, "lon": -122.4194, "tid": "123", "batt": 90, "vac": 220}' \
+  -H "Authorization: Basic your_token" \
+  -d '{
+    "_type": "location",
+    "tst": 1700820453,
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 90,
+    "batt": 94,
+    "acc": 35,
+    "bs": 2,
+    "p": 99.314,
+    "created_at": 1700820457,
+    "BSSID": "e8:48:b8:7f:b4:d4",
+    "SSID": "Mr.Puhu",
+    "vac": 20,
+    "tag": "Arbeit",
+    "topic": "owntracks/simono41/6193B679-AD67-4B93-9DF2-158501A055AF",
+    "conn": "w",
+    "m": 1,
+    "tid": "AF"
+  }' \
   http://localhost:8080/
 ```
 
