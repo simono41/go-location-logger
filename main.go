@@ -53,9 +53,9 @@ func handleRequest(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Parse query parameters
-	device := r.URL.Query().Get("d")
-	user := r.URL.Query().Get("u")
+    // Extract values from headers
+    device := r.Header.Get("X-Limit-D")
+    user := r.Header.Get("X-Limit-U")
 
 	log.Infof("Received request with device=%s and user=%s", device, user)
 
