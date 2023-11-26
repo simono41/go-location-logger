@@ -47,6 +47,21 @@ Before running the program, ensure you have the following:
     DB_NAME=your_db_name
     ```
 
+5. Create Database Table
+
+```
+CREATE TABLE `locations` (
+  `dt` timestamp NULL DEFAULT NULL,
+  `tid` char(2) DEFAULT NULL,
+  `lat` decimal(9,6) DEFAULT NULL,
+  `lon` decimal(9,6) DEFAULT NULL,
+  `batt` int(11) DEFAULT NULL,
+  `vac` int(11) DEFAULT NULL,
+  `device` varchar(255) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+```
+
 ## Usage
 
 ### Running with Docker Compose
